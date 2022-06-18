@@ -6,11 +6,16 @@ _csud_autocompletion()
     then
         COMPREPLY=($(compgen -W "install remove list all" "${COMP_WORDS[COMP_CWORD]}"))
     else
-        if [ ${COMP_WORDS[1]} == "install" ] || [ ${COMP_WORDS[1]} == "remove" ] 
-        then
-            names=$(csud all | sed 's/\n//g')
-            COMPREPLY=($(compgen -W "${names}" "${COMP_WORDS[COMP_CWORD]}"))
-        fi
+        case ${COMP_WORDS[1]} in
+            'install')
+                names=$(csud all | sed 's/\n//g')
+                COMPREPLY=($(compgen -W "${names}" "${COMP_WORDS[COMP_CWORD]}"))
+            ;;
+            'remove')
+                names=$(csud list | sed 's/\n//g')
+                COMPREPLY=($(compgen -W "${names}" "${COMP_WORDS[COMP_CWORD]}"))
+            ;;
+        esac
     fi
 }
 
