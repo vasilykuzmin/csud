@@ -1,0 +1,2 @@
+# csud
+Scripts manager CsuD.
