@@ -13,7 +13,7 @@ then
         else
             bash "$path/packages/$2/install.sh"
             echo "$2" >> "$path/csud/.local/installed-packages.txt"
-            echo "Installed !"
+            echo "Installed $2 !"
         fi
     else
         echo "BAD PACKAGE NAME : $path/packages/$2"
@@ -30,7 +30,7 @@ then
         else
             bash "$path/packages/$2/remove.sh"
             sed "/$2/d" "$path/csud/.local/installed-packages.txt" > tmp.txt && mv tmp.txt "$path/csud/.local/installed-packages.txt"
-            echo "Removed !"
+            echo "Removed $2 !"
         fi
     else
         echo "BAD PACKAGE NAME : $path/packages/$2"

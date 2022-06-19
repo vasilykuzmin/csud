@@ -1,0 +1,6 @@
+#!/bin/bash
+
+path=$(realpath $BASH_SOURCE)
+path=$(dirname "$path")
+
+"$path"/../csud.sh "$@"
