@@ -11,8 +11,8 @@ then
         then
             echo "Already installed $2"
         else
-            bash "$path/packages/$2/install.sh"
             echo "$2" >> "$path/csud/.local/installed-packages.txt"
+            bash "$path/packages/$2/install.sh"
             echo "Installed $2 !"
         fi
     else
@@ -28,8 +28,8 @@ then
         then
             echo "Already remove $2"
         else
-            bash "$path/packages/$2/remove.sh"
             sed "/$2/d" "$path/csud/.local/installed-packages.txt" > tmp.txt && mv tmp.txt "$path/csud/.local/installed-packages.txt"
+            bash "$path/packages/$2/remove.sh"
             echo "Removed $2 !"
         fi
     else
