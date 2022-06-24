@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo apt autoremove -y multimc
+# sudo apt autoremove -y multimc

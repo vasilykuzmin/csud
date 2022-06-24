@@ -5,9 +5,9 @@ path=$(dirname "$path")/..
 
 if [ "$1" == 'install' ]
 then
-    if [ -d "$path/packages/$2" ]
+    if csud all | grep -q "$2"
     then
-        if grep -q "$2" "$path/csud/.local/installed-packages.txt"
+        if csud list | grep -q "$2"
         then
             echo "Already installed $2"
         else
@@ -16,15 +16,15 @@ then
             echo "Installed $2 !"
         fi
     else
-        echo "BAD PACKAGE NAME : $path/packages/$2"
+        echo "BAD PACKAGE NAME : $2"
     fi
 fi
 
 if [ "$1" == 'remove' ]
 then
-    if [ -d "$path/packages/$2" ]
+    if csud all | grep -q "$2"
     then
-        if ! grep -q "$2" "$path/csud/.local/installed-packages.txt"
+        if ! csud list | grep -q "$2"
         then
             echo "Already remove $2"
         else
@@ -33,7 +33,7 @@ then
             echo "Removed $2 !"
         fi
     else
-        echo "BAD PACKAGE NAME : $path/packages/$2"
+        echo "BAD PACKAGE NAME : $2"
     fi
 fi
 

@@ -9,7 +9,7 @@ rm "./$filename"
 sleep 3
 
 sudo hamachi login
-sudo hamachi set-nick 'Vasiliy Kuzmin'
+sudo hamachi set-nick "$USER"
 
 echo "alias hamachi-restart='sudo hamachi logoff; sleep 1; sudo hamachi login;'" >> "$HOME/.bashrc"
 # view /etc/init.d/logmein-hamachi start
