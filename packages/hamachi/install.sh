@@ -13,3 +13,6 @@ sudo hamachi set-nick "$USER"
 
 echo "alias hamachi-restart='sudo hamachi logoff; sleep 1; sudo hamachi login;'" >> "$HOME/.bashrc"
 # view /etc/init.d/logmein-hamachi start
+
+echo "Dont forget to change nick 'sudo hamachi set-nick ...'"
+echo "Reopen terminal to enable hamachi-restart"
