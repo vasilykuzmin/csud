@@ -1,3 +1,3 @@
 #!/bin/bash
 
-# sudo apt autoremove grapejuice
+sudo apt autoremove grapejuice
